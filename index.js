@@ -20,8 +20,8 @@ function playRound(playerSelection, computerSelection) {
     //console.log("Opps Draw!!");
     user = user;
     computer = computer;
-    roundComp = 0;
-    roundUser = 0;
+    roundComp = roundComp;
+    roundUser = roundUser;
     return user, computer, roundComp, roundUser;
   }
   //check for the player having 'Scissors'
@@ -29,8 +29,8 @@ function playRound(playerSelection, computerSelection) {
     //console.log("Opps Draw!!");
     user = user;
     computer = computer;
-    roundComp = 0;
-    roundUser = 0;
+    roundComp = roundComp;
+    roundUser = roundUser;
     return user, computer, roundComp, roundUser;
   } else if (playerSelection === "SCISSORS" && computerSelection === "PAPER") {
     //console.log("Yay! I won Scissor beats Paper");
@@ -48,8 +48,8 @@ function playRound(playerSelection, computerSelection) {
     //console.log("Opps Draw!!");
     user = user;
     computer = computer;
-    roundComp = 0;
-    roundUser = 0;
+    roundComp = roundComp;
+    roundUser = roundUser;
     return user, computer, roundComp, roundUser;
   } else if (playerSelection === "PAPER" && computerSelection === "ROCK") {
     //console.log("Yay! I won PAPER beats ROCK");
@@ -78,10 +78,6 @@ function getPlayerSelection() {
 //------------------Creating a Game function that lets user to play up to 5 rounds---------------
 
 function game() {
-  let userTotal = 0;
-
-  let compTotal = 0;
-
   for (let i = 0; i < 5; i++) {
     const playerSelection = getPlayerSelection();
     const computerSelection = getComputerChoice();
@@ -89,7 +85,7 @@ function game() {
     console.log(
       `User Selected: ${playerSelection} Computer Selection: ${computerSelection}`
     );
-
+    console.log(`User Score: ${user} Computer Score: ${computer}`);
     if (roundUser > roundComp) {
       console.log("Yay You Won By score of: ", roundUser);
       roundUser -= 1;
@@ -101,15 +97,15 @@ function game() {
       roundUser -= 1;
       roundComp -= 1;
     }
-    userTotal += user;
-    compTotal += computer;
   }
-  if (userTotal > compTotal) {
-    console.log("Yay! You Won By Overall Score of: ", userTotal);
-  } else if (compTotal > userTotal) {
-    console.log("Opps Computer Won By Overall Score of: ", compTotal);
-  } else if (compTotal == userTotal) {
-    console.log("DRAW!!!");
+  if (user > computer) {
+    console.log(`Yay! You Won By Overall Score of: ${user} to ${computer} `);
+  } else if (computer > user) {
+    console.log(
+      `Opps Computer Won By Overall Score of: ${computer} to ${user}`
+    );
+  } else if (computer == user) {
+    console.log(`DRAW! In Score of ${user} to ${computer}`);
   }
 }
 
