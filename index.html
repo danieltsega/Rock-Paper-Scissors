@@ -36,8 +36,8 @@
         <div class="w-56 h-40 border-2 border-black">
           <div class="text-center kanit-bold text-2xl mb-4">SCORE</div>
           <div class="flex justify-between p-4 text-3xl">
-            <div>0</div>
-            <div>1</div>
+            <div id="compScore"></div>
+            <div id="userScore"></div>
           </div>
         </div>
         <div>
@@ -48,9 +48,7 @@
       <!-- Selection Icon Div -->
       <div class="flex justify-between items-center mb-16 px-6">
         <!-- Comp Selection -->
-        <div>
-          <img src="images/paper.png" alt="" width="50" height="50" />
-        </div>
+        <div id="compDiv"></div>
 
         <!-- User Selection -->
         <div id="userDiv"></div>
@@ -60,9 +58,8 @@
       <div class="flex justify-center items-center mb-4">
         <div
           class="border-4 border-black py-4 px-8 text-center kanit-semibold text-lg"
-        >
-          Hurray! You Won!
-        </div>
+          id="status"
+        ></div>
       </div>
 
       <!-- User Choice Icons Div -->
