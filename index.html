@@ -47,12 +47,13 @@
 
       <!-- Selection Icon Div -->
       <div class="flex justify-between items-center mb-16 px-6">
+        <!-- Comp Selection -->
         <div>
           <img src="images/paper.png" alt="" width="50" height="50" />
         </div>
-        <div>
-          <img src="images/scissor.png" alt="" width="50" height="50" />
-        </div>
+
+        <!-- User Selection -->
+        <div id="userDiv"></div>
       </div>
 
       <!-- Status Pop-up Div -->
@@ -68,16 +69,26 @@
       <div
         class="flex justify-center gap-8 p-4 items-center border-4 border-black"
       >
-        <div><img src="images/rock.png" alt="" width="50" height="50" /></div>
-        <div><img src="images/paper.png" alt="" width="50" height="50" /></div>
         <div>
-          <img src="images/scissor.png" alt="" width="50" height="50" />
+          <button id="rockBtn" onclick="buttonClick('rock')">
+            <img src="images/rock.png" alt="" width="50" height="50" />
+          </button>
+        </div>
+        <div>
+          <button id="paperBtn" onclick="buttonClick('paper')">
+            <img src="images/paper.png" alt="" width="50" height="50" />
+          </button>
+        </div>
+        <div>
+          <button id="scissorBtn" onclick="buttonClick('scissor')">
+            <img src="images/scissor.png" alt="" width="50" height="50" />
+          </button>
         </div>
       </div>
 
       <!-- Total Score Div (Modal) -->
       <div
-        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50"
+        class="absolute inset-0 hidden items-center justify-center bg-black bg-opacity-50"
       >
         <div
           class="bg-white border-2 p-4 z-10 w-80 h-56 drop-shadow-lg text-center"
