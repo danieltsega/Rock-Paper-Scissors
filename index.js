@@ -78,7 +78,7 @@ function getPlayerSelection() {
 //------------------Creating a Game function that lets user to play up to 5 rounds---------------
 
 function game() {
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 2; i++) {
     const playerSelection = getPlayerSelection();
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
@@ -111,5 +111,18 @@ function game() {
 
 // Declaring both the computer function and also the player selection of the game
 
-game();
+//game();
 //playRound(playerSelection, computerSelection);
+
+function buttonClick(value) {
+  let userDiv = document.getElementById("userDiv");
+  let imageCreate = document.createElement("img");
+  imageCreate.setAttribute("src", `images/${value}.png`);
+  imageCreate.setAttribute("width", 50);
+  imageCreate.setAttribute("height", 50);
+
+  userDiv.innerHTML = "";
+
+  userDiv.append(imageCreate);
+  console.log(value);
+}
