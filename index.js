@@ -3,6 +3,8 @@ let computer = 0;
 let roundUser = 0;
 let roundComp = 0;
 
+let round = 4;
+
 let compScore = document.getElementById("compScore");
 let userScore = document.getElementById("userScore");
 compScore.textContent = "0";
@@ -139,5 +141,50 @@ function buttonClick(value) {
 
   userDiv.append(imageCreate);
 
-  playRound(value, getComputerChoice());
+  round -= 1;
+  console.log(round);
+  if (round >= 0) {
+    playRound(value, getComputerChoice());
+  } else {
+    endGame();
+  }
+}
+
+function endGame() {
+  let endGameDiv = document.getElementById("endGameDiv");
+  endGameDiv.classList =
+    "absolute inset-0 flex items-center justify-center bg-black bg-opacity-50";
+
+  let totalScore = document.getElementById("totalScore");
+  totalScore.textContent = currentScoreUser;
+
+  let winStatus = document.getElementById("winStatus");
+  if (currentScoreUser > currentScoreComp) {
+    winStatus.textContent = "Yay! You Won!";
+  } else if (currentScoreUser < currentScoreComp) {
+    winStatus.textContent = "Opps! You Lost!";
+  } else {
+    winStatus.textContent = "Draw!!";
+  }
+
+  let resetBtn = document.getElementById("resetBtn");
+  resetBtn.addEventListener("click", resetRound);
+}
+
+function resetRound() {
+  // Reset scores
+  currentScoreUser = 0;
+  currentScoreComp = 0;
+  userScore.textContent = currentScoreUser;
+  compScore.textContent = currentScoreComp;
+
+  // Reset round
+  roundUser = 0;
+  roundComp = 0;
+  round = 4;
+
+  console.log("Round after reset:", round);
+
+  endGameDiv.classList =
+    "absolute inset-0 hidden items-center justify-center bg-black bg-opacity-50";
 }
