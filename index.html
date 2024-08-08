@@ -86,14 +86,17 @@
       <!-- Total Score Div (Modal) -->
       <div
         class="absolute inset-0 hidden items-center justify-center bg-black bg-opacity-50"
+        id="endGameDiv"
       >
         <div
-          class="bg-white border-2 p-4 z-10 w-80 h-56 drop-shadow-lg text-center"
+          class="bg-white border-2 p-4 z-10 w-80 h-72 drop-shadow-lg text-center"
         >
-          <div class="text-4xl kanit-extrabold mb-8">Game Over</div>
-          <div class="mb-8 kanit-semibold text-lg">You won</div>
+          <div class="text-4xl kanit-extrabold mb-4">Game Over</div>
+          <div class="mb-4 kanit-semibold text-2xl" id="totalScore"></div>
+          <div class="mb-8 kanit-semibold text-lg" id="winStatus"></div>
           <button
             class="px-4 py-2 border-2 border-black kanit-semibold text-lg"
+            id="resetBtn"
           >
             Play Again
           </button>
