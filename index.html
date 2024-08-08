@@ -6,22 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock-Paper-Scissors</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .kanit-semibold {
+        font-family: "Kanit", sans-serif;
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      .kanit-bold {
+        font-family: "Kanit", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+    </style>
   </head>
-  <body class="bg-gray-200">
-    <div class="w-1/2 mx-auto bg-white mt-16 p-8 relative">
+  <body class="bg-gray-200 kanit-semibold">
+    <div class="w-1/2 mx-auto bg-white mt-16 p-8 relative shadow-lg">
       <!-- Top Div -->
       <div class="flex justify-between items-center mb-4">
         <div>
           <img src="images/icons8-robot-100.png" alt="" />
         </div>
-        <div class="w-56 h-40 border-2 border-black">Score Board</div>
+        <div class="w-56 h-40 border-2 border-black">
+          <div class="text-center kanit-bold text-2xl mb-4">SCORE</div>
+          <div class="flex justify-between p-4 text-3xl">
+            <div>0</div>
+            <div>1</div>
+          </div>
+        </div>
         <div>
           <img src="images/icons8-user-100.png" alt="" />
         </div>
       </div>
 
       <!-- Selection Icon Div -->
-      <div class="flex justify-between items-center mb-16 px-4">
+      <div class="flex justify-between items-center mb-16 px-6">
         <div>
           <img src="images/paper.png" alt="" width="50" height="50" />
         </div>
@@ -32,7 +57,9 @@
 
       <!-- Status Pop-up Div -->
       <div class="flex justify-center items-center mb-4">
-        <div class="border-4 border-black p-4 text-center">
+        <div
+          class="border-4 border-black py-4 px-8 text-center kanit-semibold text-lg"
+        >
           Hurray! You Won!
         </div>
       </div>
@@ -47,6 +74,9 @@
           <img src="images/scissor.png" alt="" width="50" height="50" />
         </div>
       </div>
+
+      <!-- Total Score Div -->
+      <div class="absolute"></div>
     </div>
     <script src="index.js"></script>
   </body>
