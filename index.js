@@ -72,7 +72,7 @@ function getComputerChoice() {
 }
 // Creating a function that accepts users input
 function getPlayerSelection() {
-  let choice = prompt("Enter Your Choice: ");
+  //let choice = prompt("Enter Your Choice: ");
   return choice.toUpperCase();
 }
 //------------------Creating a Game function that lets user to play up to 5 rounds---------------
